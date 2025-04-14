@@ -1,0 +1,225 @@
+Got it, Om! Here's a **complete list of MySQL syntax commands**—organized by category—for **exam prep**. These are the most essential and frequently used commands, perfect for your revision.
+
+---
+
+## 🔹 **1. Database Commands**
+```sql
+CREATE DATABASE dbname;            -- Create new database
+SHOW DATABASES;                    -- List all databases
+USE dbname;                        -- Select a database
+DROP DATABASE dbname;             -- Delete database
+```
+
+---
+
+## 🔹 **2. Table Commands (DDL)**
+```sql
+CREATE TABLE table_name (
+    column1 datatype [constraints],
+    column2 datatype [constraints],
+    ...
+);
+
+-- Example:
+CREATE TABLE Employee (
+    EmpID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Salary DECIMAL(10, 2),
+    JoinDate DATE
+);
+
+ALTER TABLE table_name ADD column_name datatype;             -- Add column
+ALTER TABLE table_name MODIFY column_name new_datatype;      -- Modify column
+ALTER TABLE table_name DROP COLUMN column_name;              -- Drop column
+
+DROP TABLE table_name;            -- Delete table
+RENAME TABLE old_name TO new_name;  -- Rename table
+```
+
+---
+
+## 🔹 **3. Data Types**
+```sql
+INT, FLOAT, DOUBLE, DECIMAL(x,y)
+VARCHAR(n), CHAR(n), TEXT
+DATE, DATETIME, TIME, YEAR
+BOOLEAN
+```
+
+---
+
+## 🔹 **4. Constraints**
+```sql
+PRIMARY KEY (col)                -- Uniquely identifies each row
+FOREIGN KEY (col) REFERENCES other_table(col)
+NOT NULL                         -- Disallows NULL
+UNIQUE                           -- Ensures all values are unique
+CHECK (condition)                -- Validates column values
+DEFAULT value                    -- Sets default value
+AUTO_INCREMENT                   -- Auto-increments numeric values
+```
+
+---
+
+## 🔹 **5. Insert, Update, Delete (DML)**
+```sql
+-- Insert data
+INSERT INTO table_name (col1, col2) VALUES (val1, val2);
+INSERT INTO table_name VALUES (val1, val2, ...);
+
+-- Update data
+UPDATE table_name SET col1 = val1 WHERE condition;
+
+-- Delete data
+DELETE FROM table_name WHERE condition;
+```
+
+---
+
+## 🔹 **6. Select Queries (DQL)**
+```sql
+SELECT * FROM table_name;
+SELECT column1, column2 FROM table_name;
+SELECT DISTINCT column FROM table_name;
+
+-- With WHERE
+SELECT * FROM table_name WHERE condition;
+
+-- Conditions
+=, >, <, >=, <=, <>, !=, AND, OR, NOT, BETWEEN, IN, LIKE
+
+-- ORDER BY
+SELECT * FROM table_name ORDER BY column ASC|DESC;
+
+-- LIMIT
+SELECT * FROM table_name LIMIT 5;
+```
+
+---
+
+## 🔹 **7. Aggregate Functions**
+```sql
+SELECT COUNT(*), SUM(col), AVG(col), MIN(col), MAX(col)
+FROM table_name
+WHERE condition;
+```
+
+---
+
+## 🔹 **8. Grouping and Filtering**
+```sql
+SELECT column, COUNT(*)
+FROM table_name
+GROUP BY column;
+
+SELECT column, COUNT(*)
+FROM table_name
+GROUP BY column
+HAVING COUNT(*) > 1;
+```
+
+---
+
+## 🔹 **9. Joins**
+```sql
+-- INNER JOIN
+SELECT a.col, b.col
+FROM table1 a
+INNER JOIN table2 b ON a.common_col = b.common_col;
+
+-- LEFT JOIN
+SELECT * FROM table1
+LEFT JOIN table2 ON table1.id = table2.id;
+
+-- RIGHT JOIN
+SELECT * FROM table1
+RIGHT JOIN table2 ON table1.id = table2.id;
+
+-- FULL JOIN (not supported directly in MySQL)
+SELECT * FROM table1
+LEFT JOIN table2 ON table1.id = table2.id
+UNION
+SELECT * FROM table1
+RIGHT JOIN table2 ON table1.id = table2.id;
+```
+
+---
+
+## 🔹 **10. Views**
+```sql
+-- Create a view
+CREATE VIEW view_name AS
+SELECT column1, column2 FROM table_name WHERE condition;
+
+-- Use a view
+SELECT * FROM view_name;
+
+-- Drop view
+DROP VIEW view_name;
+```
+
+---
+
+## 🔹 **11. Indexes**
+```sql
+CREATE INDEX index_name ON table_name (column_name);
+DROP INDEX index_name ON table_name;
+```
+
+---
+
+## 🔹 **12. Transactions**
+```sql
+START TRANSACTION;
+UPDATE table_name SET col = val WHERE condition;
+COMMIT;     -- Save changes
+ROLLBACK;   -- Undo changes
+```
+
+---
+
+## 🔹 **13. User & Privileges**
+```sql
+-- Create user
+CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+
+-- Grant privileges
+GRANT ALL PRIVILEGES ON dbname.* TO 'username'@'localhost';
+
+-- Revoke privileges
+REVOKE ALL PRIVILEGES ON dbname.* FROM 'username'@'localhost';
+
+-- Show users
+SELECT User FROM mysql.user;
+
+-- Drop user
+DROP USER 'username'@'localhost';
+```
+
+---
+
+## 🔹 **14. Backup & Restore**
+```bash
+-- Backup
+mysqldump -u username -p dbname > backup.sql
+
+-- Restore
+mysql -u username -p dbname < backup.sql
+```
+
+---
+
+## 🔹 **15. Miscellaneous**
+```sql
+SHOW TABLES;                     -- List tables
+DESCRIBE table_name;             -- Show table structure
+SHOW COLUMNS FROM table_name;
+SHOW INDEXES FROM table_name;
+```
+
+---
+
+### ✅ **Pro Tip for Exam**
+Revise with this cheat sheet, practice a few queries, and **don’t forget syntax like `GROUP BY`, `HAVING`, `FOREIGN KEY`, and `JOINs`**—they’re favorites in exams!
+
+Do you want me to generate a **PDF or printable sheet** for this full list?
