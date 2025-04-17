@@ -499,3 +499,255 @@ Explain each code snippet with output
 
 Just say the word!
 
+
+Cia1-2
+
+ 
+CIA - 1 | Python Programming
+
+Total Marks: 25 | Date: 29/01/2025
+
+
+---
+
+Q1. Answer the following questions. (10 Marks)
+
+a) Write a code in Python for the following conditions:
+
+Suppose there are different slabs of discount on a purchase:
+
+20% on amount exceeding 10000
+
+10% for amount between 5000–10000
+
+5% if it is between 1000–5000
+
+No discount if amount < 1000
+
+
+Answer:
+
+amount = float(input("Enter purchase amount: "))
+
+if amount > 10000:
+    discount = 0.20 * amount
+elif 5000 <= amount <= 10000:
+    discount = 0.10 * amount
+elif 1000 <= amount < 5000:
+    discount = 0.05 * amount
+else:
+    discount = 0
+
+print("Discount applied:", discount)
+print("Final amount to pay:", amount - discount)
+
+
+---
+
+b) Print all letters except 'a' and 'e' from the string
+
+Venkatanagarsimharajuvaripeta using for loop and if condition.
+
+Answer:
+
+string = "Venkatanagarsimharajuvaripeta"
+
+for letter in string:
+    if letter != 'a' and letter != 'e':
+        print(letter, end='')
+
+
+---
+
+Q2. Answer the following questions. (10 Marks)
+
+a) Display the list of numbers from 1 to 10 and print:
+
+1. numbers[1:6]
+
+
+2. numbers[-5:1]
+
+
+
+Answer:
+
+numbers = list(range(1, 11))
+print("Original list:", numbers)
+
+# 1. From index 1 to 5
+print("numbers[1:6]:", numbers[1:6])
+
+# 2. From index -5 to 1 (won't print because -5 > 1 in list context)
+print("numbers[-5:1]:", numbers[-5:1])
+
+
+---
+
+b) Write a code to find the sum of square numbers from 1 to 10.
+
+Answer:
+
+sum_of_squares = 0
+for i in range(1, 11):
+    sum_of_squares += i ** 2
+print("Sum of squares from 1 to 10 is:", sum_of_squares)
+
+
+---
+
+Q3. Answer the following questions. (5 Marks)
+
+a) List out various programming editors used to execute Python code.
+
+Answer:
+
+PyCharm
+
+VS Code
+
+Jupyter Notebook
+
+Sublime Text
+
+Atom
+
+
+
+---
+
+b) What is the use of the scope operator ::?
+
+Answer:
+
+The :: operator in Python is used for extended slicing.
+For example:
+
+nums = [1, 2, 3, 4, 5]
+print(nums[::2])  # Output: [1, 3, 5]
+
+
+---
+
+CIA - 2 | Python Programming
+
+Total Marks: 25 | Date: 26/03/2025
+
+
+---
+
+Q1. Answer the following questions. (10 Marks)
+
+a) Apply file open operation to implement Python code.
+
+Answer:
+
+# Reading a file
+file = open("sample.txt", "r")
+content = file.read()
+print(content)
+file.close()
+
+
+---
+
+b) Apply file write operation to implement Python code.
+
+Answer:
+
+# Writing to a file
+file = open("output.txt", "w")
+file.write("Hello, this is a write operation.")
+file.close()
+
+
+---
+
+Q2. Answer the following questions. (10 Marks)
+
+a) Create a class FYCY with two data members (roll number and student name), and an object to pass values.
+
+Answer:
+
+class FYCY:
+    def __init__(self, roll_no, student_name):
+        self.roll_no = roll_no
+        self.student_name = student_name
+
+    def display(self):
+        print("Roll No:", self.roll_no)
+        print("Name:", self.student_name)
+
+student1 = FYCY(101, "Ashish")
+student1.display()
+
+
+---
+
+b) Create two classes named SET and SCM with two data members: CSE and BCom name.
+
+Create an object to pass values into them.
+
+Answer:
+
+class SET:
+    def __init__(self, cse_name):
+        self.cse_name = cse_name
+
+    def display(self):
+        print("CSE Name:", self.cse_name)
+
+class SCM:
+    def __init__(self, bcom_name):
+        self.bcom_name = bcom_name
+
+    def display(self):
+        print("BCom Name:", self.bcom_name)
+
+obj1 = SET("Rahul")
+obj2 = SCM("Sneha")
+
+obj1.display()
+obj2.display()
+
+
+---
+
+Q3. Answer the following questions. (5 Marks)
+
+a) Explain the use of Matplotlib in Python with an example.
+
+Answer:
+
+Matplotlib is used for plotting and visualizing data in graphs and charts.
+
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4]
+y = [10, 20, 25, 30]
+
+plt.plot(x, y)
+plt.title("Simple Line Graph")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.show()
+
+
+---
+
+b) State the importance of math library in Python.
+
+Answer:
+
+The math library provides access to mathematical functions such as sqrt(), pow(), pi, sin(), log(), etc.
+
+import math
+print("Square root of 25:", math.sqrt(25))
+print("Value of pi:", math.pi)
+
+
+---
+
+If you want these answers as a printable PDF or DOC file, I can generate that too!
+
+
